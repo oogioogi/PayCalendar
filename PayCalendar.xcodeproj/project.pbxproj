@@ -7,15 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91A8062328222DA400CE8189 /* MonthlyPayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062228222DA400CE8189 /* MonthlyPayDetailView.swift */; };
+		91A8062528222EB500CE8189 /* MonthlyPayDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062428222EB500CE8189 /* MonthlyPayDetailViewModel.swift */; };
+		91A8062728223BF100CE8189 /* LeaveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062628223BF100CE8189 /* LeaveDetailView.swift */; };
+		91AA6CDD2820C3A30057AA8A /* AddingNewCodeNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA6CDC2820C3A30057AA8A /* AddingNewCodeNoteView.swift */; };
+		91AA6CDF2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA6CDE2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift */; };
+		91AA6CE12820CBEF0057AA8A /* NoteEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA6CE02820CBEF0057AA8A /* NoteEntityModel.swift */; };
 		91B5A63A281F5E2700767FD0 /* PayCalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A639281F5E2700767FD0 /* PayCalendarApp.swift */; };
 		91B5A63C281F5E2700767FD0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A63B281F5E2700767FD0 /* ContentView.swift */; };
 		91B5A63E281F5E2800767FD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B5A63D281F5E2800767FD0 /* Assets.xcassets */; };
 		91B5A641281F5E2800767FD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B5A640281F5E2800767FD0 /* Preview Assets.xcassets */; };
 		91B5A643281F5E2800767FD0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A642281F5E2800767FD0 /* Persistence.swift */; };
 		91B5A646281F5E2800767FD0 /* PayCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A644281F5E2800767FD0 /* PayCalendar.xcdatamodeld */; };
+		91B5A651281F5ECB00767FD0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A650281F5ECB00767FD0 /* MainView.swift */; };
+		91B5A655281F5F4300767FD0 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A654281F5F4300767FD0 /* DateExtension.swift */; };
+		91B5A657281F5F8000767FD0 /* MainViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A656281F5F8000767FD0 /* MainViewExtension.swift */; };
+		91B5A65A281F628100767FD0 /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A659281F628100767FD0 /* NoteEntity.swift */; };
+		91B5A65C281F653A00767FD0 /* enumList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A65B281F653A00767FD0 /* enumList.swift */; };
+		91B5A660281F6BD000767FD0 /* SelectedDateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A65F281F6BD000767FD0 /* SelectedDateNoteView.swift */; };
+		91B5A662281F7D3700767FD0 /* TextWithBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A661281F7D3700767FD0 /* TextWithBadge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91A8062228222DA400CE8189 /* MonthlyPayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPayDetailView.swift; sourceTree = "<group>"; };
+		91A8062428222EB500CE8189 /* MonthlyPayDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPayDetailViewModel.swift; sourceTree = "<group>"; };
+		91A8062628223BF100CE8189 /* LeaveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveDetailView.swift; sourceTree = "<group>"; };
+		91AA6CDC2820C3A30057AA8A /* AddingNewCodeNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCodeNoteView.swift; sourceTree = "<group>"; };
+		91AA6CDE2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCodeNoteViewModel.swift; sourceTree = "<group>"; };
+		91AA6CE02820CBEF0057AA8A /* NoteEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEntityModel.swift; sourceTree = "<group>"; };
 		91B5A636281F5E2700767FD0 /* PayCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B5A639281F5E2700767FD0 /* PayCalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCalendarApp.swift; sourceTree = "<group>"; };
 		91B5A63B281F5E2700767FD0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +42,13 @@
 		91B5A640281F5E2800767FD0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91B5A642281F5E2800767FD0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		91B5A645281F5E2800767FD0 /* PayCalendar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PayCalendar.xcdatamodel; sourceTree = "<group>"; };
+		91B5A650281F5ECB00767FD0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		91B5A654281F5F4300767FD0 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		91B5A656281F5F8000767FD0 /* MainViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewExtension.swift; sourceTree = "<group>"; };
+		91B5A659281F628100767FD0 /* NoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEntity.swift; sourceTree = "<group>"; };
+		91B5A65B281F653A00767FD0 /* enumList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumList.swift; sourceTree = "<group>"; };
+		91B5A65F281F6BD000767FD0 /* SelectedDateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDateNoteView.swift; sourceTree = "<group>"; };
+		91B5A661281F7D3700767FD0 /* TextWithBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithBadge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +83,14 @@
 			children = (
 				91B5A639281F5E2700767FD0 /* PayCalendarApp.swift */,
 				91B5A63B281F5E2700767FD0 /* ContentView.swift */,
+				91B5A64F281F5EAD00767FD0 /* Views */,
+				91B5A64E281F5EA200767FD0 /* ViewModels */,
+				91B5A64D281F5E9900767FD0 /* Models */,
+				91B5A658281F5FB500767FD0 /* Enums */,
+				91B5A653281F5F0400767FD0 /* Components */,
+				91B5A652281F5EF800767FD0 /* Extensions */,
+				91B5A64C281F5E5500767FD0 /* CoreData */,
 				91B5A63D281F5E2800767FD0 /* Assets.xcassets */,
-				91B5A642281F5E2800767FD0 /* Persistence.swift */,
-				91B5A644281F5E2800767FD0 /* PayCalendar.xcdatamodeld */,
 				91B5A63F281F5E2800767FD0 /* Preview Content */,
 			);
 			path = PayCalendar;
@@ -71,6 +102,70 @@
 				91B5A640281F5E2800767FD0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		91B5A64C281F5E5500767FD0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				91B5A644281F5E2800767FD0 /* PayCalendar.xcdatamodeld */,
+				91B5A642281F5E2800767FD0 /* Persistence.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		91B5A64D281F5E9900767FD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91B5A659281F628100767FD0 /* NoteEntity.swift */,
+				91AA6CE02820CBEF0057AA8A /* NoteEntityModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		91B5A64E281F5EA200767FD0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				91AA6CDE2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift */,
+				91A8062428222EB500CE8189 /* MonthlyPayDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		91B5A64F281F5EAD00767FD0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91B5A650281F5ECB00767FD0 /* MainView.swift */,
+				91B5A65F281F6BD000767FD0 /* SelectedDateNoteView.swift */,
+				91AA6CDC2820C3A30057AA8A /* AddingNewCodeNoteView.swift */,
+				91A8062228222DA400CE8189 /* MonthlyPayDetailView.swift */,
+				91A8062628223BF100CE8189 /* LeaveDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		91B5A652281F5EF800767FD0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				91B5A654281F5F4300767FD0 /* DateExtension.swift */,
+				91B5A656281F5F8000767FD0 /* MainViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		91B5A653281F5F0400767FD0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				91B5A661281F7D3700767FD0 /* TextWithBadge.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		91B5A658281F5FB500767FD0 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				91B5A65B281F653A00767FD0 /* enumList.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +239,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B5A646281F5E2800767FD0 /* PayCalendar.xcdatamodeld in Sources */,
+				91B5A655281F5F4300767FD0 /* DateExtension.swift in Sources */,
+				91AA6CE12820CBEF0057AA8A /* NoteEntityModel.swift in Sources */,
 				91B5A643281F5E2800767FD0 /* Persistence.swift in Sources */,
+				91A8062728223BF100CE8189 /* LeaveDetailView.swift in Sources */,
+				91AA6CDD2820C3A30057AA8A /* AddingNewCodeNoteView.swift in Sources */,
+				91A8062328222DA400CE8189 /* MonthlyPayDetailView.swift in Sources */,
+				91B5A65C281F653A00767FD0 /* enumList.swift in Sources */,
+				91AA6CDF2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift in Sources */,
 				91B5A63C281F5E2700767FD0 /* ContentView.swift in Sources */,
+				91B5A651281F5ECB00767FD0 /* MainView.swift in Sources */,
+				91B5A657281F5F8000767FD0 /* MainViewExtension.swift in Sources */,
+				91B5A65A281F628100767FD0 /* NoteEntity.swift in Sources */,
 				91B5A63A281F5E2700767FD0 /* PayCalendarApp.swift in Sources */,
+				91B5A662281F7D3700767FD0 /* TextWithBadge.swift in Sources */,
+				91A8062528222EB500CE8189 /* MonthlyPayDetailViewModel.swift in Sources */,
+				91B5A660281F6BD000767FD0 /* SelectedDateNoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
