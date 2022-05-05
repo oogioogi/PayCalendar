@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91A6CAF32823BA41009A4688 /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6CAF22823BA41009A4688 /* BlankView.swift */; };
+		91A6CAF52823BCA5009A4688 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6CAF42823BCA5009A4688 /* BottomSheet.swift */; };
 		91A8062328222DA400CE8189 /* MonthlyPayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062228222DA400CE8189 /* MonthlyPayDetailView.swift */; };
 		91A8062528222EB500CE8189 /* MonthlyPayDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062428222EB500CE8189 /* MonthlyPayDetailViewModel.swift */; };
 		91A8062728223BF100CE8189 /* LeaveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062628223BF100CE8189 /* LeaveDetailView.swift */; };
@@ -26,9 +28,13 @@
 		91B5A65C281F653A00767FD0 /* enumList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A65B281F653A00767FD0 /* enumList.swift */; };
 		91B5A660281F6BD000767FD0 /* SelectedDateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A65F281F6BD000767FD0 /* SelectedDateNoteView.swift */; };
 		91B5A662281F7D3700767FD0 /* TextWithBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A661281F7D3700767FD0 /* TextWithBadge.swift */; };
+		91DFF3D6282351D80060EC24 /* LeaveUsedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DFF3D5282351D80060EC24 /* LeaveUsedListView.swift */; };
+		91DFF3DA282378710060EC24 /* PersonInfoSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DFF3D9282378710060EC24 /* PersonInfoSettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91A6CAF22823BA41009A4688 /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
+		91A6CAF42823BCA5009A4688 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		91A8062228222DA400CE8189 /* MonthlyPayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPayDetailView.swift; sourceTree = "<group>"; };
 		91A8062428222EB500CE8189 /* MonthlyPayDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPayDetailViewModel.swift; sourceTree = "<group>"; };
 		91A8062628223BF100CE8189 /* LeaveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveDetailView.swift; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 		91B5A65B281F653A00767FD0 /* enumList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumList.swift; sourceTree = "<group>"; };
 		91B5A65F281F6BD000767FD0 /* SelectedDateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDateNoteView.swift; sourceTree = "<group>"; };
 		91B5A661281F7D3700767FD0 /* TextWithBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithBadge.swift; sourceTree = "<group>"; };
+		91DFF3D5282351D80060EC24 /* LeaveUsedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveUsedListView.swift; sourceTree = "<group>"; };
+		91DFF3D9282378710060EC24 /* PersonInfoSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoSettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +146,8 @@
 				91B5A65F281F6BD000767FD0 /* SelectedDateNoteView.swift */,
 				91AA6CDC2820C3A30057AA8A /* AddingNewCodeNoteView.swift */,
 				91A8062228222DA400CE8189 /* MonthlyPayDetailView.swift */,
-				91A8062628223BF100CE8189 /* LeaveDetailView.swift */,
+				91DFF3D8282378570060EC24 /* PersonViews */,
+				91DFF3D7282377E50060EC24 /* LeaveViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				91B5A661281F7D3700767FD0 /* TextWithBadge.swift */,
+				91A6CAF22823BA41009A4688 /* BlankView.swift */,
+				91A6CAF42823BCA5009A4688 /* BottomSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -166,6 +177,23 @@
 				91B5A65B281F653A00767FD0 /* enumList.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		91DFF3D7282377E50060EC24 /* LeaveViews */ = {
+			isa = PBXGroup;
+			children = (
+				91DFF3D5282351D80060EC24 /* LeaveUsedListView.swift */,
+				91A8062628223BF100CE8189 /* LeaveDetailView.swift */,
+			);
+			path = LeaveViews;
+			sourceTree = "<group>";
+		};
+		91DFF3D8282378570060EC24 /* PersonViews */ = {
+			isa = PBXGroup;
+			children = (
+				91DFF3D9282378710060EC24 /* PersonInfoSettingView.swift */,
+			);
+			path = PersonViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,18 +267,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B5A646281F5E2800767FD0 /* PayCalendar.xcdatamodeld in Sources */,
+				91A6CAF32823BA41009A4688 /* BlankView.swift in Sources */,
 				91B5A655281F5F4300767FD0 /* DateExtension.swift in Sources */,
 				91AA6CE12820CBEF0057AA8A /* NoteEntityModel.swift in Sources */,
 				91B5A643281F5E2800767FD0 /* Persistence.swift in Sources */,
 				91A8062728223BF100CE8189 /* LeaveDetailView.swift in Sources */,
 				91AA6CDD2820C3A30057AA8A /* AddingNewCodeNoteView.swift in Sources */,
 				91A8062328222DA400CE8189 /* MonthlyPayDetailView.swift in Sources */,
+				91DFF3DA282378710060EC24 /* PersonInfoSettingView.swift in Sources */,
 				91B5A65C281F653A00767FD0 /* enumList.swift in Sources */,
 				91AA6CDF2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift in Sources */,
 				91B5A63C281F5E2700767FD0 /* ContentView.swift in Sources */,
 				91B5A651281F5ECB00767FD0 /* MainView.swift in Sources */,
 				91B5A657281F5F8000767FD0 /* MainViewExtension.swift in Sources */,
 				91B5A65A281F628100767FD0 /* NoteEntity.swift in Sources */,
+				91DFF3D6282351D80060EC24 /* LeaveUsedListView.swift in Sources */,
+				91A6CAF52823BCA5009A4688 /* BottomSheet.swift in Sources */,
 				91B5A63A281F5E2700767FD0 /* PayCalendarApp.swift in Sources */,
 				91B5A662281F7D3700767FD0 /* TextWithBadge.swift in Sources */,
 				91A8062528222EB500CE8189 /* MonthlyPayDetailViewModel.swift in Sources */,

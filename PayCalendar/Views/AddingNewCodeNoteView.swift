@@ -21,51 +21,63 @@ struct AddingNewCodeNoteView: View {
     @State private var vacation: Leave = .none
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("New Code Add")
-                    .font(.system(.title, design: .rounded)).fontWeight(.heavy)
+        
+            VStack {
+                
                 Spacer()
-                Button {
-                    self.isAddingNewCodeNoteView = false
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.system(.title, design: .default))
-                }
-            }
-            
-            // selectedNotes 구성중 튿정일이 같은 하는 저장된요소를 찾아서 note에 저장
-            if let note = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
-                codeScreen(code: note.wrappedCode)
-                howworkScreen(howwork: note.wrappedHowwork)
-                vacationScreen(vacation: vacation)
-            }else {
-                codeScreen(code: daycode)
-                howworkScreen(howwork: howDoWork)
-                vacationScreen(vacation: vacation)
-            }
-            
-            Circle()
-                .frame(width: 50, height: 50, alignment: .center)
-                .foregroundColor(.purple)
-                .overlay(
-                    Text("Save").font(.system(size: 16, weight: .heavy, design: .rounded))
-                        .foregroundColor(.white)
-                )
-                .onTapGesture {
-                    if let editNote = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
-                        //편집 저장
-                        viewContext.delete(editNote)
-                        save()
-                        self.isAddingNewCodeNoteView = false
-                    }else {
-                        // 신규 저장
-                        save()
-                        self.isAddingNewCodeNoteView = false
+                
+                VStack {
+                    HStack {
+                        Text("New Code Add")
+                            .font(.system(.title, design: .rounded)).fontWeight(.heavy)
+                        Spacer()
+                        Button {
+                            self.isAddingNewCodeNoteView.toggle()
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.system(.title, design: .default))
+                        }
                     }
+                            
+                    // selectedNotes 구성중 튿정일이 같은 하는 저장된요소를 찾아서 note에 저장
+                    if let note = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
+                        codeScreen(code: note.wrappedCode)
+                        howworkScreen(howwork: note.wrappedHowwork)
+                        vacationScreen(vacation: vacation)
+                    }else {
+                        codeScreen(code: daycode)
+                        howworkScreen(howwork: howDoWork)
+                        vacationScreen(vacation: vacation)
+                    }
+                            
+                    Circle()
+                        .frame(width: 50, height: 50, alignment: .center)
+                        .foregroundColor(.purple)
+                        .overlay(
+                            Text("Save").font(.system(size: 16, weight: .heavy, design: .rounded))
+                                .foregroundColor(.white)
+                        )
+                        .onTapGesture {
+                            if let editNote = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
+                                //편집 저장
+                                viewContext.delete(editNote)
+                                save()
+                                self.isAddingNewCodeNoteView = false
+                            }else {
+                                // 신규 저장
+                                save()
+                                self.isAddingNewCodeNoteView = false
+                            }
+                        }
                 }
-        }
-    }
+                .padding()
+                .background(Color.yellow)
+            }
+    
+    
+        
+        
+}
     
     // - Save -
     private func save() {

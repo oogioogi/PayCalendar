@@ -10,6 +10,8 @@ import Combine
 
 struct LeaveDetailView: View {
     
+    @State var isLeaveDetail: Bool = false
+    
     private var monthTotal: Double {
         let total = notesForYear.filter {
             $0.leave == "월차"
@@ -32,15 +34,27 @@ struct LeaveDetailView: View {
     
     init(notes: [NoteEntity]) {
         self.notesForYear = notes
-        
     }
     
     var body: some View {
         
-        VStack {
-            Text("연차 사용수 : " + String(self.yearTotal))
-            Text("월차 사용수 : " + String(self.monthTotal))
-        }.font(.system(.caption, design: .default))
+        HStack(alignment: .top) {
+            VStack {
+                Text("연차 사용수 : " + String(self.yearTotal))
+                Text("월차 사용수 : " + String(self.monthTotal))
+            }.font(.system(.caption, design: .default))
+            Image(systemName: "questionmark.circle.fill")
+                .font(.body).foregroundColor(.purple)
+                .onTapGesture {
+                    self.isLeaveDetail.toggle()
+                }
+        }
+        .sheet(isPresented: $isLeaveDetail) {
+            if let usedLeaves = notesForYear.filter({ $0.wrappedLeave.rawValue == "연차" }).sorted(by: { $0.selectedDay < $1.selectedDay }) {
+                LeaveUsedListView(usedLeaves: usedLeaves, isLeaveDetail: $isLeaveDetail)
+            }
+            
+        }
         
     }
 }
