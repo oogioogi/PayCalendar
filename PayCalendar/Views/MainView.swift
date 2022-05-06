@@ -84,9 +84,8 @@ struct MainView: View {
                         
                         Image(systemName: "person.circle")
                             .font(.largeTitle)
-                            .foregroundColor(self.isInfoSetting ? .pink : .blue)
-                            .scaleEffect(self.isInfoSetting ? 1.5 : 1.0)
-                            .onLongPressGesture {
+                            .foregroundColor(.blue)
+                            .onTapGesture {
                                 withAnimation {
                                     //  개인 설정 화면
                                     self.isInfoSetting.toggle()
@@ -140,6 +139,7 @@ struct MainView: View {
             }
             .padding(.horizontal, 10)
             .sheet(isPresented: $isMonthlyPayDetailView, content: { MonthlyPayDetailView(notes: selectedMonthNotes) })
+            .sheet(isPresented: $isInfoSetting, content: { PersonInfoSettingView(isInfoSetting: $isInfoSetting) })
             
             //새로운 코드 입력
             if isAddingNewCodeNoteView {
@@ -154,11 +154,6 @@ struct MainView: View {
                 .transition(.move(edge: .bottom))
                 .animation(.easeInOut(duration: 0.2))
             }
-            
-            if isInfoSetting {
-                PersonInfoSettingView(isInfoSetting: $isInfoSetting)
-            }
-        
         }
     }
     

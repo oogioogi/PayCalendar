@@ -21,62 +21,67 @@ struct AddingNewCodeNoteView: View {
     @State private var vacation: Leave = .none
     
     var body: some View {
-        
+        GeometryReader { screen in
             VStack {
-                
                 Spacer()
-                
-                VStack {
-                    HStack {
-                        Text("New Code Add")
-                            .font(.system(.title, design: .rounded)).fontWeight(.heavy)
-                        Spacer()
-                        Button {
-                            self.isAddingNewCodeNoteView.toggle()
-                        } label: {
-                            Image(systemName: "xmark.circle.fill")
-                                .font(.system(.title, design: .default))
-                        }
-                    }
-                            
-                    // selectedNotes 구성중 튿정일이 같은 하는 저장된요소를 찾아서 note에 저장
-                    if let note = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
-                        codeScreen(code: note.wrappedCode)
-                        howworkScreen(howwork: note.wrappedHowwork)
-                        vacationScreen(vacation: vacation)
-                    }else {
-                        codeScreen(code: daycode)
-                        howworkScreen(howwork: howDoWork)
-                        vacationScreen(vacation: vacation)
-                    }
-                            
-                    Circle()
-                        .frame(width: 50, height: 50, alignment: .center)
-                        .foregroundColor(.purple)
+                ZStack {
+                    Rectangle()
+                        .frame(maxWidth: .infinity, maxHeight: screen.size.height / 2)
+                        .cornerRadius(20)
+                        .foregroundColor(.yellow)
                         .overlay(
-                            Text("Save").font(.system(size: 16, weight: .heavy, design: .rounded))
-                                .foregroundColor(.white)
-                        )
-                        .onTapGesture {
-                            if let editNote = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
-                                //편집 저장
-                                viewContext.delete(editNote)
-                                save()
-                                self.isAddingNewCodeNoteView = false
-                            }else {
-                                // 신규 저장
-                                save()
-                                self.isAddingNewCodeNoteView = false
+                            VStack(alignment: .center, spacing: 20) {
+                                HStack {
+                                    Text("근무 코드")
+                                        .font(.system(.title, design: .default)).fontWeight(.heavy)
+                                    Spacer()
+                                    Button {
+                                        self.isAddingNewCodeNoteView.toggle()
+                                    } label: {
+                                        Image(systemName: "xmark.circle.fill")
+                                            .font(.system(.largeTitle, design: .default))
+                                            .foregroundColor(.pink)
+                                    }
+                                }
+                                
+                                // selectedNotes 구성중 튿정일이 같은 하는 저장된요소를 찾아서 note에 저장
+                                if let note = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
+                                    codeScreen(code: note.wrappedCode)
+                                    howworkScreen(howwork: note.wrappedHowwork)
+                                    vacationScreen(vacation: vacation)
+                                }else {
+                                    codeScreen(code: daycode)
+                                    howworkScreen(howwork: howDoWork)
+                                    vacationScreen(vacation: vacation)
+                                }
+                                
+                                Circle()
+                                    .frame(width: 50, height: 50, alignment: .center)
+                                    .foregroundColor(.purple)
+                                    .overlay(
+                                        Text("Save").font(.system(size: 16, weight: .heavy, design: .rounded))
+                                            .foregroundColor(.white)
+                                    )
+                                    .onTapGesture {
+                                        if let editNote = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
+                                            //편집 저장
+                                            viewContext.delete(editNote)
+                                            save()
+                                            self.isAddingNewCodeNoteView = false
+                                        }else {
+                                            // 신규 저장
+                                            save()
+                                            self.isAddingNewCodeNoteView = false
+                                        }
+                                    }
+                                
                             }
-                        }
+                            .padding()
+                        )
                 }
-                .padding()
-                .background(Color.yellow)
             }
-    
-    
-        
-        
+        }
+        .edgesIgnoringSafeArea(.bottom)
 }
     
     // - Save -
@@ -97,29 +102,7 @@ struct AddingNewCodeNoteView: View {
             print(error.localizedDescription)
         }
     }
-    
-    // - Edit -
-//    private func edit(editor: NoteEntity) {
-//        viewContext.delete(editor)
-//
-//        let newNote = NoteEntity(context: viewContext)
-//        newNote.id = UUID()
-//        newNote.selectedDate = Date()
-//        newNote.selectedDay = indexDate.formattedInt
-//        newNote.selectedMonth = indexDate.formattedMonth
-//        newNote.wrappedCode = daycode
-//        newNote.wrappedHowwork = howDoWork
-//        newNote.wrappedLeave = vacation
-//
-//        do {
-//            try viewContext.save()
-//            self.isAddingNewCodeNoteView = false
-//        }catch {
-//            print("Failed to save the record...")
-//            print(error.localizedDescription)
-//        }
-//    }
-    
+        
     // -- View Builser --
     @ViewBuilder
     private func codeScreen(code: Code) -> some View {
@@ -178,8 +161,8 @@ struct AddingNewCodeNoteView: View {
 
 struct AddingNewCodeNoteView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-        //AddingNewCodeNoteView(noteResults: PersistenceController.preview.container.viewContext, isAddingNewCodeNoteView: .constant(false), indexDate: .constant(Date()))
+//        MainView()
+//            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        AddingNewCodeNoteView(selectMonthNotes: [], isAddingNewCodeNoteView: .constant(false), indexDate: .constant(Date()))
     }
 }
