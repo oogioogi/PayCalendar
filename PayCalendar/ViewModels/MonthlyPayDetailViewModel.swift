@@ -8,11 +8,14 @@
 import Foundation
 
 class MonthlyPayDetailViewModel: ObservableObject {
-    
+
     @Published var notes: [NoteEntity] = []
+    
+    var personInfoVM = PersonInfoSettingViewModel()
     
     init(notes: [NoteEntity]) {
         self.notes = notes
+        personInfoVM.personInfo = personInfoVM.loadJson()
     }
     
     
@@ -89,21 +92,20 @@ class MonthlyPayDetailViewModel: ObservableObject {
      //연장 근로 수당
      //(통상임금/243)*연장근무*1.5
         public func overTimePay() -> Double {
-            let normalwage: Double = 4205761    // 통상임금
-            let gibonSisu: Double = 243 // 기본시수
+            //let normalwage: Double = 4205761    // 통상임금
+            //let gibonSisu: Double = 243 // 기본시수
 
-            let pay = (normalwage/gibonSisu) * daysOverTime * 1.5
-
+            let pay = (personInfoVM.personInfo.tongsangPay/personInfoVM.personInfo.gibonsisu) * daysOverTime * 1.5
             return pay
         }
 
     // 휴일 휴무 연장 근로 수당
     // (통상임금/243)*연장근무*1.5
         public func dayoffOverTimePay() -> Double {
-            let normalwage: Double = 4205761    // 통상임금
-            let gibonSisu: Double = 243 // 기본시수
+            //let normalwage: Double = 4205761    // 통상임금
+            //let gibonSisu: Double = 243 // 기본시수
 
-            let pay = (normalwage/gibonSisu) * dayoffsOverTime * 1.5
+            let pay = (personInfoVM.personInfo.tongsangPay/personInfoVM.personInfo.gibonsisu) * dayoffsOverTime * 1.5
 
             return pay
         }
@@ -111,10 +113,10 @@ class MonthlyPayDetailViewModel: ObservableObject {
     // 야간 근로 수당
     // (통상임금/243)*야간 근로*1.5
         public func nightPay() -> Double {
-            let normalwage: Double = 4205761    // 통상임금
-            let gibonSisu: Double = 243 // 기본시수
+            //let normalwage: Double = 4205761    // 통상임금
+            //let gibonSisu: Double = 243 // 기본시수
 
-            let pay = (normalwage/gibonSisu) * countNights * 0.5
+            let pay = (personInfoVM.personInfo.tongsangPay/personInfoVM.personInfo.gibonsisu) * countNights * 0.5
 
             return pay
         }
@@ -122,10 +124,10 @@ class MonthlyPayDetailViewModel: ObservableObject {
     // 휴일 휴무 연장 근로 수당
     // (통상임금/243)*연장근무*1.5
         public func dayoffPay() -> Double {
-            let normalwage: Double = 4205761    // 통상임금
-            let gibonSisu: Double = 243 // 기본시수
+            //let normalwage: Double = 4205761    // 통상임금
+            //let gibonSisu: Double = 243 // 기본시수
 
-            let pay = (normalwage/gibonSisu) * countDayoffs * 1.5
+            let pay = (personInfoVM.personInfo.tongsangPay/personInfoVM.personInfo.gibonsisu) * countDayoffs * 1.5
 
             return pay
         }
@@ -133,9 +135,9 @@ class MonthlyPayDetailViewModel: ObservableObject {
     // 야간 근로 수당
     // (통상임금/243)*야간 근로*1.5
         public func dayClosedPay() -> Double {
-            let normalwage: Double = 4205761    // 통상임금
-            let gibonSisu: Double = 243 // 기본시수
-            let pay = (normalwage/gibonSisu) * countDaycloses * 1.5
+            //let normalwage: Double = 4205761    // 통상임금
+            //let gibonSisu: Double = 243 // 기본시수
+            let pay = (personInfoVM.personInfo.tongsangPay/personInfoVM.personInfo.gibonsisu) * countDaycloses * 1.5
 
             return pay
         }

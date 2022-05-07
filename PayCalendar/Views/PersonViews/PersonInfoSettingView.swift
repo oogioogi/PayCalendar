@@ -14,6 +14,7 @@ struct PersonInfoSettingView: View {
     
     @ObservedObject var personInfoVM = PersonInfoSettingViewModel()
     @Binding var isInfoSetting: Bool
+    @State var isSave: Bool = false
     
     var numberFormatter: NumberFormatter {
         let formatter = NumberFormatter()
@@ -36,22 +37,65 @@ struct PersonInfoSettingView: View {
             
             List {
                 Section {
-                    TextField("이름", text: $personInfoVM.personInfo.name)
-                    TextField("입사일", text: $personInfoVM.personInfo.inCoLtd)
-                    TextField("직급", text: $personInfoVM.personInfo.grade)
+                    HStack(spacing: 20) {
+                        capsuleText("이름", color: .green)
+                        TextField("이름", text: $personInfoVM.personInfo.name)
+                    }
+                    HStack(spacing: 20) {
+                        capsuleText("입사일", color: .green)
+                        TextField("입사일", text: $personInfoVM.personInfo.inCoLtd)
+                    }
+                    HStack(spacing: 20) {
+                        capsuleText("직급", color: .green)
+                        TextField("직급", text: $personInfoVM.personInfo.grade)
+                    }
                 } header: { sectionHeader(text: "프로필") }
                 
                 Section {
-                    TextField("통상 임급", value: $personInfoVM.personInfo.tongsangPay, formatter: numberFormatter)
-                    TextField("기본 시수", value: $personInfoVM.personInfo.gibonsisu, formatter: numberFormatter)
-                    TextField("연차 발생 수", value: $personInfoVM.personInfo.annnulTotal, formatter: numberFormatter)
+                    
+                    HStack(spacing: 20) {
+                        capsuleText("통상 임급", color: .green)
+                        TextField("통상 임급", value: $personInfoVM.personInfo.tongsangPay, formatter: numberFormatter)
+                        Text("원")
+                    }
+                    HStack(spacing: 20) {
+                        capsuleText("기본 시수", color: .green)
+                        TextField("기본 시수", value: $personInfoVM.personInfo.gibonsisu, formatter: numberFormatter)
+                        Text("시간")
+                    }
+                    HStack(spacing: 20) {
+                        capsuleText("연차 발생 수", color: .green)
+                        TextField("연차 발생 수", value: $personInfoVM.personInfo.annnulTotal, formatter: numberFormatter)
+                        Text("개")
+                    }
+
                 } header: { sectionHeader(text: "기본 사항") }
                 
                 Section {
-                    TextField("현장 수당", value: $personInfoVM.personInfo.hyunjangPay, formatter: numberFormatter)
-                    TextField("직위 수당", value: $personInfoVM.personInfo.jicwyPay, formatter: numberFormatter)
-                    TextField("근속 수당", value: $personInfoVM.personInfo.gunsokPay, formatter: numberFormatter)
-                    TextField("가족 수당", value: $personInfoVM.personInfo.gajokPay, formatter: numberFormatter)
+                    HStack(spacing: 20) {
+                        capsuleText("현장 수당", color: .green)
+                        TextField("현장 수당", value: $personInfoVM.personInfo.hyunjangPay, formatter: numberFormatter)
+                        Text("원")
+                    }
+                    HStack(spacing: 20) {
+                        capsuleText("직위 수당", color: .green)
+                        TextField("직위 수당", value: $personInfoVM.personInfo.jicwyPay, formatter: numberFormatter)
+                        Text("원")
+                    }
+                    HStack(spacing: 20) {
+                        capsuleText("근속 수당", color: .green)
+                        TextField("근속 수당", value: $personInfoVM.personInfo.gunsokPay, formatter: numberFormatter)
+                        Text("원")
+                    }
+                    HStack(spacing: 20) {
+                        capsuleText("가족 수당", color: .green)
+                        TextField("가족 수당", value: $personInfoVM.personInfo.gajokPay, formatter: numberFormatter)
+                        Text("원")
+                    }
+                    
+                    
+                    
+                   
                 } header: { sectionHeader(text: "개인 수당") }
             }
             .listStyle(.plain)
@@ -59,15 +103,24 @@ struct PersonInfoSettingView: View {
             Capsule()
                 .frame(width: 100, height: 40)
                 .foregroundColor(.purple)
+                .scaleEffect(self.isSave ? 0.5 : 1.0)
                 .overlay(
                     Text("Save")
                         .font(.system(.title, design: .rounded))
                         .foregroundColor(.white)
                         .fontWeight(.heavy)
+                        .scaleEffect(self.isSave ? 0.5 : 1.0)
+
                 )
                 .onTapGesture {
-                    personInfoVM.saveToJson(person: personInfoVM.personInfo)
-                    self.isInfoSetting.toggle()
+                    withAnimation {
+                        self.isSave.toggle()
+                    }
+                    DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) {
+                        personInfoVM.saveToJson(person: personInfoVM.personInfo)
+                        self.isInfoSetting.toggle()
+                    }
+                    
                 }
         }
         .padding()
@@ -76,7 +129,17 @@ struct PersonInfoSettingView: View {
             print("\(personInfoVM.personInfo)")
         }
     }
-    
+    @ViewBuilder
+    private func capsuleText(_ text: String, color: Color) -> some View {
+        Capsule()
+            .frame(width: 80, height: 25)
+            .foregroundColor(color)
+            .overlay(
+                Text(text)
+                    .foregroundColor(.white)
+                    .font(.system(.subheadline, design: .default)).fontWeight(.heavy)
+            )
+    }
     @ViewBuilder
     private func sectionHeader(text: String) -> some View {
         Capsule()
@@ -89,6 +152,7 @@ struct PersonInfoSettingView: View {
                     .fontWeight(.heavy)
             )
     }
+    
 }
 
 struct PersonInfoSettingView_Previews: PreviewProvider {
