@@ -16,7 +16,6 @@
 		91A8062728223BF100CE8189 /* LeaveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062628223BF100CE8189 /* LeaveDetailView.swift */; };
 		91AA6CDD2820C3A30057AA8A /* AddingNewCodeNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA6CDC2820C3A30057AA8A /* AddingNewCodeNoteView.swift */; };
 		91AA6CDF2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA6CDE2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift */; };
-		91AA6CE12820CBEF0057AA8A /* NoteEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA6CE02820CBEF0057AA8A /* NoteEntityModel.swift */; };
 		91B5A63A281F5E2700767FD0 /* PayCalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A639281F5E2700767FD0 /* PayCalendarApp.swift */; };
 		91B5A63E281F5E2800767FD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B5A63D281F5E2800767FD0 /* Assets.xcassets */; };
 		91B5A641281F5E2800767FD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B5A640281F5E2800767FD0 /* Preview Assets.xcassets */; };
@@ -45,7 +44,6 @@
 		91A8062628223BF100CE8189 /* LeaveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveDetailView.swift; sourceTree = "<group>"; };
 		91AA6CDC2820C3A30057AA8A /* AddingNewCodeNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCodeNoteView.swift; sourceTree = "<group>"; };
 		91AA6CDE2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCodeNoteViewModel.swift; sourceTree = "<group>"; };
-		91AA6CE02820CBEF0057AA8A /* NoteEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEntityModel.swift; sourceTree = "<group>"; };
 		91B5A636281F5E2700767FD0 /* PayCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B5A639281F5E2700767FD0 /* PayCalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCalendarApp.swift; sourceTree = "<group>"; };
 		91B5A63D281F5E2800767FD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 			children = (
 				91B5A659281F628100767FD0 /* NoteEntity.swift */,
 				91B65FE72825FEBA00F6676F /* PersonInfo.swift */,
-				91AA6CE02820CBEF0057AA8A /* NoteEntityModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,7 +275,6 @@
 				91B5A646281F5E2800767FD0 /* PayCalendar.xcdatamodeld in Sources */,
 				91A6CAF32823BA41009A4688 /* BlankView.swift in Sources */,
 				91B5A655281F5F4300767FD0 /* DateExtension.swift in Sources */,
-				91AA6CE12820CBEF0057AA8A /* NoteEntityModel.swift in Sources */,
 				91B5A643281F5E2800767FD0 /* Persistence.swift in Sources */,
 				91A8062728223BF100CE8189 /* LeaveDetailView.swift in Sources */,
 				91AA6CDD2820C3A30057AA8A /* AddingNewCodeNoteView.swift in Sources */,

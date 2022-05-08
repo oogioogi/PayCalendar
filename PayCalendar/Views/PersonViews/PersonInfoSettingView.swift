@@ -126,7 +126,7 @@ struct PersonInfoSettingView: View {
         .padding()
         .onAppear {
             personInfoVM.personInfo = personInfoVM.loadJson()
-            print("\(personInfoVM.personInfo)")
+            //print("\(personInfoVM.personInfo)")
         }
     }
     @ViewBuilder
