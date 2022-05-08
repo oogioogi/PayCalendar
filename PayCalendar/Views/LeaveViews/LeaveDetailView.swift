@@ -37,7 +37,7 @@ struct LeaveDetailView: View {
     }
     
     var body: some View {
-        
+
         HStack(alignment: .top) {
             VStack {
                 Text("연차 사용수 : " + String(self.yearTotal))
@@ -50,7 +50,6 @@ struct LeaveDetailView: View {
                 .onTapGesture {
                     self.isLeaveDetail.toggle()
                 }
-            
         }
         .padding(.horizontal, 10)
         .sheet(isPresented: $isLeaveDetail) {
@@ -66,6 +65,6 @@ struct LeaveDetailView: View {
 struct LeaveDetailView_Previews: PreviewProvider {
     static var previews: some View {
         LeaveDetailView(notes: [])
-            .previewLayout(.sizeThatFits)
+            // .previewLayout(.sizeThatFits)
     }
 }

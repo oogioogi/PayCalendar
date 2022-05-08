@@ -10,7 +10,7 @@ import Combine
 
 struct TextWithBadge: View {
     var year: String = "2022"
-    var month: Int32 = 1
+    var month: Int32 = 12
     
     // String.Element = Charactor
     var years: [String.Element] {
@@ -23,8 +23,8 @@ struct TextWithBadge: View {
         HStack(alignment: .bottom, spacing: 3) {
                  ForEach(years, id: \.self) {
                      Text($0.description)
-                         .frame(width: 30, height: 30)
-                         .font(.system(size: 20, weight: .heavy, design: .rounded))
+                         .frame(width: 40, height: 40)
+                         .font(.system(size: 25, weight: .heavy, design: .rounded))
                          .foregroundColor(.white)
                          .background(randomColor[.random(in: 0...6)])
                          .clipShape(Circle())
@@ -35,7 +35,7 @@ struct TextWithBadge: View {
                  Circle().frame(width: 5, height: 5)//.offset(x: 0, y: 10)
                  
                  Text("\(month)")
-                     .frame(width: 30, height: 30)
+                     .frame(width: 35, height: 35)
                      .font(.system(size: 20, weight: .heavy, design: .rounded))
                      .foregroundColor(.white)
                      .background(Color.yellow)
