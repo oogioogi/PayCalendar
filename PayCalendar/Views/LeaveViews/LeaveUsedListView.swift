@@ -13,15 +13,19 @@ struct LeaveUsedListView: View {
     
     var usedLeaves: [NoteEntity]
     
+    // *****
     // 바인딩 아규먼트 파라메터 설정 방법
     init(usedLeaves: [NoteEntity], isLeaveDetail: Binding<Bool>) {
         self.usedLeaves = usedLeaves
         self._isLeaveDetail = isLeaveDetail
     }
+    
     var body: some View {
         VStack {
             HStack {
-                Text("연차 사용 날짜").font(.headline)
+                Text("연차 사용 날짜")
+                    .font(.headline)
+                    .fontWeight(.heavy)
                 Spacer()
                 Image(systemName: "xmark.circle.fill").font(.title)
                     .foregroundColor(.purple)
@@ -31,7 +35,13 @@ struct LeaveUsedListView: View {
             }
             List {
                 ForEach(usedLeaves, id:\.self) { leave in
-                    Text(leave.selectedDate.formattedString)
+                    HStack(spacing: 20) {
+                        Text(leave.selectedDate.formattedString)
+                        Text(leave.wrappedLeave.rawValue)
+                            .foregroundColor(leave.wrappedLeave.rawValue == "연차" ? .red : .blue)
+                            .fontWeight(.heavy)
+                    }
+                    
                 }
                 
             }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		91A6CAF32823BA41009A4688 /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6CAF22823BA41009A4688 /* BlankView.swift */; };
 		91A6CAF52823BCA5009A4688 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6CAF42823BCA5009A4688 /* BottomSheet.swift */; };
+		91A7BD5828272FB400D651F7 /* SlideButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A7BD5728272FB400D651F7 /* SlideButtons.swift */; };
+		91A7BD5A28274B4700D651F7 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A7BD5928274B4700D651F7 /* ArrowView.swift */; };
 		91A8062328222DA400CE8189 /* MonthlyPayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062228222DA400CE8189 /* MonthlyPayDetailView.swift */; };
 		91A8062528222EB500CE8189 /* MonthlyPayDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062428222EB500CE8189 /* MonthlyPayDetailViewModel.swift */; };
 		91A8062728223BF100CE8189 /* LeaveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062628223BF100CE8189 /* LeaveDetailView.swift */; };
@@ -16,7 +18,6 @@
 		91AA6CDF2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA6CDE2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift */; };
 		91AA6CE12820CBEF0057AA8A /* NoteEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA6CE02820CBEF0057AA8A /* NoteEntityModel.swift */; };
 		91B5A63A281F5E2700767FD0 /* PayCalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A639281F5E2700767FD0 /* PayCalendarApp.swift */; };
-		91B5A63C281F5E2700767FD0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A63B281F5E2700767FD0 /* ContentView.swift */; };
 		91B5A63E281F5E2800767FD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B5A63D281F5E2800767FD0 /* Assets.xcassets */; };
 		91B5A641281F5E2800767FD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B5A640281F5E2800767FD0 /* Preview Assets.xcassets */; };
 		91B5A643281F5E2800767FD0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A642281F5E2800767FD0 /* Persistence.swift */; };
@@ -37,6 +38,8 @@
 /* Begin PBXFileReference section */
 		91A6CAF22823BA41009A4688 /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
 		91A6CAF42823BCA5009A4688 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		91A7BD5728272FB400D651F7 /* SlideButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideButtons.swift; sourceTree = "<group>"; };
+		91A7BD5928274B4700D651F7 /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
 		91A8062228222DA400CE8189 /* MonthlyPayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPayDetailView.swift; sourceTree = "<group>"; };
 		91A8062428222EB500CE8189 /* MonthlyPayDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPayDetailViewModel.swift; sourceTree = "<group>"; };
 		91A8062628223BF100CE8189 /* LeaveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveDetailView.swift; sourceTree = "<group>"; };
@@ -45,7 +48,6 @@
 		91AA6CE02820CBEF0057AA8A /* NoteEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEntityModel.swift; sourceTree = "<group>"; };
 		91B5A636281F5E2700767FD0 /* PayCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B5A639281F5E2700767FD0 /* PayCalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCalendarApp.swift; sourceTree = "<group>"; };
-		91B5A63B281F5E2700767FD0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		91B5A63D281F5E2800767FD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91B5A640281F5E2800767FD0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91B5A642281F5E2800767FD0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -94,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				91B5A639281F5E2700767FD0 /* PayCalendarApp.swift */,
-				91B5A63B281F5E2700767FD0 /* ContentView.swift */,
 				91B5A64F281F5EAD00767FD0 /* Views */,
 				91B5A64E281F5EA200767FD0 /* ViewModels */,
 				91B5A64D281F5E9900767FD0 /* Models */,
@@ -173,6 +174,8 @@
 				91B5A661281F7D3700767FD0 /* TextWithBadge.swift */,
 				91A6CAF22823BA41009A4688 /* BlankView.swift */,
 				91A6CAF42823BCA5009A4688 /* BottomSheet.swift */,
+				91A7BD5728272FB400D651F7 /* SlideButtons.swift */,
+				91A7BD5928274B4700D651F7 /* ArrowView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -280,10 +283,11 @@
 				91A8062728223BF100CE8189 /* LeaveDetailView.swift in Sources */,
 				91AA6CDD2820C3A30057AA8A /* AddingNewCodeNoteView.swift in Sources */,
 				91A8062328222DA400CE8189 /* MonthlyPayDetailView.swift in Sources */,
+				91A7BD5A28274B4700D651F7 /* ArrowView.swift in Sources */,
 				91DFF3DA282378710060EC24 /* PersonInfoSettingView.swift in Sources */,
+				91A7BD5828272FB400D651F7 /* SlideButtons.swift in Sources */,
 				91B5A65C281F653A00767FD0 /* enumList.swift in Sources */,
 				91AA6CDF2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift in Sources */,
-				91B5A63C281F5E2700767FD0 /* ContentView.swift in Sources */,
 				91B65FEA2825FFB200F6676F /* PersonInfoSettingViewModel.swift in Sources */,
 				91B5A651281F5ECB00767FD0 /* MainView.swift in Sources */,
 				91B5A657281F5F8000767FD0 /* MainViewExtension.swift in Sources */,

@@ -30,72 +30,25 @@ struct MainView: View {
                         .font(.system(size: 30, weight: .heavy, design: .rounded))
                     //Spacer()
                 }
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
                 
                 // 날짜 년도.월. 이동 버턴 애니메이션 효과 추가
                 // *** 탭 제스쳐 좌우 이동으로도 가능 하게 끔 한다
                 HStack {
                     TextWithBadge(year: self.selectedYear, month: self.selectedOnlyMonth)
                     Spacer()
-                    HStack {
-                        Image(systemName: "arrowshape.turn.up.left.circle.fill")
-                            .onTapGesture {
-                                withAnimation {
-                                    self.monthCount -= 1
-                                }
-                            }
-                        Image(systemName: "stop.circle.fill")
-                            .onTapGesture {
-                                withAnimation {
-                                    self.monthCount = 0
-                                }
-                            }
-                        Image(systemName: "arrowshape.turn.up.right.circle.fill")
-                            .onTapGesture {
-                                withAnimation {
-                                    self.monthCount += 1
-                                }
-                            }
-                    }.font(.title).foregroundColor(.purple)
+                    ArrowView(monthCount: $monthCount)
                 }
                 
                 HStack {
                     // 연차 사용 갯수
                     LeaveDetailView(notes: selectedYearNotes)
-                    Spacer()
-                    
-                    HStack {
-                        Image(systemName: self.isLeftArrow ? "arrow.right.square.fill" : "arrow.left.square.fill")
-                            .font(.system(.largeTitle, design: .default))
-                            .foregroundColor(.mint)
-                            .onTapGesture {
-                                withAnimation {
-                                    self.isLeftArrow.toggle()
-                                }
-                            }
-                        
-                        Spacer()
-                        
-                        Image(systemName: "dollarsign.circle.fill")
-                            .font(.system(.largeTitle, design: .default))
-                            .foregroundColor(.mint)
-                            .onTapGesture {
-                                self.isMonthlyPayDetailView.toggle()
-                            }
-                        
-                        Image(systemName: "person.circle")
-                            .font(.largeTitle)
-                            .foregroundColor(.blue)
-                            .onTapGesture {
-                                withAnimation {
-                                    //  개인 설정 화면
-                                    self.isInfoSetting.toggle()
-                                }
-                            }
-                    }
-                    .padding(.horizontal, 0)
-                    .offset(self.isLeftArrow ? CGSize(width: 0, height: 0) : CGSize(width: 200, height: 0))
-                    
+                    // 슬라이드 뷰
+                    SlideButtons(isMonthlyPayDetailView: $isMonthlyPayDetailView, isInfoSetting: $isInfoSetting)
+
                 }
+                .frame(height: 45)
                 
                 List {
                     // 선택한 달로 부터 일수를 구함
@@ -137,7 +90,7 @@ struct MainView: View {
                 .listStyle(.plain)
                     //.offset(isInfoSetting ? CGSize(width: 0, height: -80) : CGSize(width: 0, height: 0))
             }
-            .padding(.horizontal, 10)
+            //.padding(.horizontal, 10)
             .sheet(isPresented: $isMonthlyPayDetailView, content: { MonthlyPayDetailView(notes: selectedMonthNotes) })
             .sheet(isPresented: $isInfoSetting, content: { PersonInfoSettingView(isInfoSetting: $isInfoSetting) })
             
@@ -178,3 +131,42 @@ struct MainView_Previews: PreviewProvider {
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+
+/*
+ HStack {
+     GeometryReader { inLayor in
+         HStack {
+             Spacer()
+             Image(systemName: self.isLeftArrow ? "arrow.right" : "arrow.left")
+                 .font(.system(.title, design: .default))
+                 .foregroundColor(.mint)
+                 .onTapGesture {
+                     withAnimation {
+                         self.isLeftArrow.toggle()
+                     }
+                 }
+             Image(systemName: "dollarsign.circle.fill")
+                 .font(.system(.largeTitle, design: .default))
+                 .foregroundColor(.mint)
+                 .onTapGesture {
+                     self.isMonthlyPayDetailView.toggle()
+                 }
+
+             Image(systemName: "person.circle")
+                 .font(.largeTitle)
+                 .foregroundColor(.blue)
+                 .onTapGesture {
+                     withAnimation {
+                         //  개인 설정 화면
+                         self.isInfoSetting.toggle()
+                     }
+                 }
+         }
+         .offset(self.isLeftArrow ?
+                 CGSize(width: 0, height: 0) :
+                 CGSize(width: (outLayor.size.width - inLayor.size.width) - 10, height: 0))
+     }
+
+ }
+}
+ */

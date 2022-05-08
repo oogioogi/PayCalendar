@@ -42,15 +42,19 @@ struct LeaveDetailView: View {
             VStack {
                 Text("연차 사용수 : " + String(self.yearTotal))
                 Text("월차 사용수 : " + String(self.monthTotal))
-            }.font(.system(.caption, design: .default))
+            }
+            .font(.system(.caption, design: .default))
+            
             Image(systemName: "questionmark.circle.fill")
-                .font(.body).foregroundColor(.purple)
+                .font(.title2).foregroundColor(.pink)
                 .onTapGesture {
                     self.isLeaveDetail.toggle()
                 }
+            
         }
+        .padding(.horizontal, 10)
         .sheet(isPresented: $isLeaveDetail) {
-            if let usedLeaves = notesForYear.filter({ $0.wrappedLeave.rawValue == "연차" }).sorted(by: { $0.selectedDay < $1.selectedDay }) {
+            if let usedLeaves = notesForYear.filter({ $0.wrappedLeave.rawValue == "연차" || $0.wrappedLeave.rawValue == "월차" }).sorted(by: { $0.selectedDay < $1.selectedDay }) {
                 LeaveUsedListView(usedLeaves: usedLeaves, isLeaveDetail: $isLeaveDetail)
             }
             
