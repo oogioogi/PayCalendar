@@ -46,11 +46,7 @@ struct MainView: View {
                 // 연차 사용 갯수. 슬라이드 뷰
                 HStack {
                     LeaveDetailView(notes: selectedYearNotes)
-                    Image(systemName: "calendar")
-                        .onTapGesture {
-                            self.isCalendarModeView.toggle()
-                        }
-                    SlideButtons(isMonthlyPayDetailView: $isMonthlyPayDetailView, isInfoSetting: $isInfoSetting)
+                    SlideButtons(isMonthlyPayDetailView: $isMonthlyPayDetailView, isInfoSetting: $isInfoSetting, isCalendarModeView: $isCalendarModeView)
                 }
                 .frame(height: 45)
                 

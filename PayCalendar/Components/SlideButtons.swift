@@ -11,6 +11,7 @@ struct SlideButtons: View {
     
     @Binding var isMonthlyPayDetailView: Bool
     @Binding var isInfoSetting: Bool
+    @Binding var isCalendarModeView: Bool
     
     @State var itemWidth: CGFloat = 35.0
     @State var isArrowTapped: Bool = false
@@ -39,20 +40,21 @@ struct SlideButtons: View {
                                 .onTapGesture {
                                     self.isInfoSetting.toggle()
                                 }
-                            Image(systemName: "doc.text.magnifyingglass")
+                            Image(systemName: "wonsign.circle")
                                 .foregroundColor(.pink)
                                 .font(.system(size: self.itemWidth))
                                 .onTapGesture {
                                     self.isMonthlyPayDetailView.toggle()
                                 }
-                            Image(systemName: "wonsign.circle")
+                            Image(systemName: "calendar")
                                 .foregroundColor(.purple)
                                 .font(.system(size: self.itemWidth))
-                            Image(systemName: "printer.fill")
-                                .foregroundColor(.green)
-                                .font(.system(size: self.itemWidth))
+                                .onTapGesture {
+                                    self.isCalendarModeView.toggle()
+                                }
+
                         }
-                        .offset(self.isArrowTapped ? CGSize(width: 0, height: 0) : CGSize(width: itemWidth * 5.2, height: 0))
+                            .offset(self.isArrowTapped ? CGSize(width: 0, height: 0) : CGSize(width: itemWidth * 4.0, height: 0))
                     )
             } // HStack
             
@@ -62,7 +64,8 @@ struct SlideButtons: View {
 
 struct SlideButtons_Previews: PreviewProvider {
     static var previews: some View {
-        SlideButtons(isMonthlyPayDetailView: .constant(false), isInfoSetting: .constant(false))
+        SlideButtons(isMonthlyPayDetailView: .constant(false), isInfoSetting: .constant(false), isCalendarModeView: .constant(false))
+            .preferredColorScheme(.dark)
     }
 }
 
