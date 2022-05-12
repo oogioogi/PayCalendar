@@ -18,6 +18,7 @@ struct MonthlyPayDetailView: View {
     }
     
     var body: some View {
+        
         List {
             Section {
                 detailPayRows(title: "연장 수당", content: monthlyPayDetailViewModel.overTimePay)
@@ -26,35 +27,36 @@ struct MonthlyPayDetailView: View {
                 detailPayRows(title: "휴무 수당", content: monthlyPayDetailViewModel.dayClosedPay)
                 detailPayRows(title: "야간 수당", content: monthlyPayDetailViewModel.nightPay)
                 detailPayRows(title: "야간 교대 수당", content: monthlyPayDetailViewModel.nightShiftDaysPay)
-                
+                    
             } header: {
                 Text("수당")
                     .font(.system(.title2, design: .default))
                     .fontWeight(.heavy)
             }
-            
+                
             Section {
                 detailHourRows(title: "평일 연장", content: monthlyPayDetailViewModel.daysOverTime)
                 detailHourRows(title: "휴일 연장", content: monthlyPayDetailViewModel.dayoffsOverTime)
                 detailHourRows(title: "휴일 근무", content: monthlyPayDetailViewModel.countDayoffs)
                 detailHourRows(title: "휴무 근무", content: monthlyPayDetailViewModel.countDaycloses)
                 detailHourRows(title: "야간 근무", content: monthlyPayDetailViewModel.countNights)
-                
+                    
             } header: {
                 Text("시간")
                     .font(.system(.title2, design: .default))
                     .fontWeight(.heavy)
             }
-            
+                
             Section {
                 detailHourRows(title: "사용 일수", content: monthlyPayDetailViewModel.countAnnuals)
             } header: {
-                Text("연차")
+                Text("월차")
                     .font(.system(.title2, design: .default))
                     .fontWeight(.heavy)
             }
         }
         .listStyle(InsetGroupedListStyle())
+        
     }
     
     @ViewBuilder

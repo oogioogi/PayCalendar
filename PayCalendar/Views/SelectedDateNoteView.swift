@@ -11,24 +11,14 @@ struct SelectedDateNoteView: View {
     
     var monthNote: NoteEntity?
     var selectedDate: Date = Date()
-    
-//    init(selectedDate: Date) {
-//        self.monthNote = NoteEntity()
-//        self.selectedDate = selectedDate
-//    }
-//
-//    init(monthNote: NoteEntity, selectedDate: Date) {
-//        self.monthNote = monthNote
-//        self.selectedDate = selectedDate
-//    }
-    
+
     var body: some View {
         HStack(alignment: .bottom) {
             VStack(alignment: .leading, spacing: 3) {
                 HStack(alignment: .bottom, spacing: 0) {
                     Text("\(selectedDate.formattedDay)")
                         .font(.system(.title, design: .rounded)).fontWeight(.heavy)
-                    .foregroundColor(selectedDate.formattedInt == Date().formattedInt ? .yellow : .primary)
+                        .foregroundColor(selectedDate.formattedInt == Date().formattedInt ? .yellow : .primary)
                     Text(".day")
                         .font(.system(.caption, design: .rounded)).fontWeight(.bold)
                 }
@@ -99,10 +89,10 @@ private func noteView(monthNote: NoteEntity?) -> some View {
                         .foregroundColor(.green) // 근무 코드
                 }
                 
-
+                
             }
             .opacity(monthNote.wrappedLeave.select < 1 ? 1.0 : 0.0) //연치/월차 이면 안보임
-
+            
             if monthNote.wrappedLeave.select > 0 {
                 HStack {
                     Image("leave")

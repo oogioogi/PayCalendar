@@ -10,12 +10,15 @@ import SwiftUI
 @main
 struct PayCalendarApp: App {
     let persistenceController = PersistenceController.shared
-
+    
+    @StateObject var calendarViewModel = CalendarViewModel()
+    
     var body: some Scene {
         WindowGroup {
             //ContentView()
             MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(calendarViewModel)
         }
     }
 }
