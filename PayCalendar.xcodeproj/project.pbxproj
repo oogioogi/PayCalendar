@@ -15,7 +15,6 @@
 		91A8062528222EB500CE8189 /* MonthlyPayDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062428222EB500CE8189 /* MonthlyPayDetailViewModel.swift */; };
 		91A8062728223BF100CE8189 /* LeaveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062628223BF100CE8189 /* LeaveDetailView.swift */; };
 		91AA6CDD2820C3A30057AA8A /* AddingNewCodeNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA6CDC2820C3A30057AA8A /* AddingNewCodeNoteView.swift */; };
-		91AA6CDF2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA6CDE2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift */; };
 		91ABA22428291DE10097F3BB /* CalendarModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ABA22328291DE10097F3BB /* CalendarModeView.swift */; };
 		91ABA2262829216B0097F3BB /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ABA2252829216B0097F3BB /* CalendarViewModel.swift */; };
 		91B5A63A281F5E2700767FD0 /* PayCalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5A639281F5E2700767FD0 /* PayCalendarApp.swift */; };
@@ -46,7 +45,6 @@
 		91A8062428222EB500CE8189 /* MonthlyPayDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPayDetailViewModel.swift; sourceTree = "<group>"; };
 		91A8062628223BF100CE8189 /* LeaveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveDetailView.swift; sourceTree = "<group>"; };
 		91AA6CDC2820C3A30057AA8A /* AddingNewCodeNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCodeNoteView.swift; sourceTree = "<group>"; };
-		91AA6CDE2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCodeNoteViewModel.swift; sourceTree = "<group>"; };
 		91ABA22328291DE10097F3BB /* CalendarModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModeView.swift; sourceTree = "<group>"; };
 		91ABA2252829216B0097F3BB /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		91B5A636281F5E2700767FD0 /* PayCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,7 +140,6 @@
 		91B5A64E281F5EA200767FD0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				91AA6CDE2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift */,
 				91A8062428222EB500CE8189 /* MonthlyPayDetailViewModel.swift */,
 				91B65FE92825FFB200F6676F /* PersonInfoSettingViewModel.swift */,
 				91ABA2252829216B0097F3BB /* CalendarViewModel.swift */,
@@ -294,7 +291,6 @@
 				91DFF3DA282378710060EC24 /* PersonInfoSettingView.swift in Sources */,
 				91A7BD5828272FB400D651F7 /* SlideButtons.swift in Sources */,
 				91B5A65C281F653A00767FD0 /* enumList.swift in Sources */,
-				91AA6CDF2820C6FC0057AA8A /* AddingNewCodeNoteViewModel.swift in Sources */,
 				91B65FEA2825FFB200F6676F /* PersonInfoSettingViewModel.swift in Sources */,
 				91B5A651281F5ECB00767FD0 /* MainView.swift in Sources */,
 				91B5A657281F5F8000767FD0 /* MainViewExtension.swift in Sources */,

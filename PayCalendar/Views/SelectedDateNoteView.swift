@@ -19,6 +19,7 @@ struct SelectedDateNoteView: View {
                     Text("\(selectedDate.formattedDay)")
                         .font(.system(.title, design: .rounded)).fontWeight(.heavy)
                         .foregroundColor(selectedDate.formattedInt == Date().formattedInt ? .yellow : .primary)
+                        .underline(selectedDate.formattedInt == Date().formattedInt ? true : false, color: .yellow)
                     Text(".day")
                         .font(.system(.caption, design: .rounded)).fontWeight(.bold)
                 }

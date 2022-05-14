@@ -46,13 +46,19 @@ struct AddingNewCodeNoteView: View {
                                 
                                 // selectedNotes 구성중 튿정일이 같은 하는 저장된요소를 찾아서 note에 저장
                                 if let note = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
-                                    codeScreen(code: note.wrappedCode)
-                                    howworkScreen(howwork: note.wrappedHowwork)
-                                    vacationScreen(vacation: vacation)
+                                    //HStack{
+                                        codeScreen(code: note.wrappedCode)
+                                        howworkScreen(howwork: note.wrappedHowwork)
+                                        vacationScreen(vacation: vacation)
+                                    //}
+                                    
                                 }else {
-                                    codeScreen(code: daycode)
-                                    howworkScreen(howwork: howDoWork)
-                                    vacationScreen(vacation: vacation)
+                                    //HStack {
+                                        codeScreen(code: daycode)
+                                        howworkScreen(howwork: howDoWork)
+                                        vacationScreen(vacation: vacation)
+                                    //}
+                                    
                                 }
                                 
                                 Circle()
@@ -151,7 +157,8 @@ struct AddingNewCodeNoteView: View {
                 ForEach(Leave.allCases) { item in
                     Text(item.rawValue)
                 }
-            }.pickerStyle(.segmented)
+            }
+            .pickerStyle(.segmented)
         }
         .onAppear {
             self.vacation = vacation
