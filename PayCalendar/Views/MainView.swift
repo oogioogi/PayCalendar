@@ -92,7 +92,7 @@ struct MainView: View {
             .sheet(isPresented: $isMonthlyPayDetailView, content: { MonthlyPayDetailView(notes: selectedMonthNotes) })
             .fullScreenCover(isPresented: $isInfoSetting, content: { PersonInfoSettingView(isInfoSetting: $isInfoSetting) })
             .sheet(isPresented: $isCalendarModeView, content: { CalendarModeView(selectedMonthNotes: selectedMonthNotes)})
-            
+
             //새로운 코드 입력
             if isAddingNewCodeNoteView {
                 BlankView(bgColor: .black)
@@ -132,7 +132,7 @@ struct MainView_Previews: PreviewProvider {
         MainView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .environmentObject(calendarViewModel)
-            .preferredColorScheme(.dark)
+            //.preferredColorScheme(.dark)
     }
 }
 

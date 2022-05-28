@@ -37,7 +37,7 @@ struct AddingNewCodeNoteView: View {
                                     Spacer()
                                     Button {
                                         self.isAddingNewCodeNoteView.toggle()
-                                    } label: {
+                                    }label: {
                                         Image(systemName: "xmark.circle.fill")
                                             .font(.system(.largeTitle, design: .default))
                                             .foregroundColor(.pink)
@@ -80,7 +80,6 @@ struct AddingNewCodeNoteView: View {
                                             self.isAddingNewCodeNoteView = false
                                         }
                                     }
-                                
                             }
                             .padding()
                         )

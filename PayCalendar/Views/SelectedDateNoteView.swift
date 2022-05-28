@@ -19,7 +19,7 @@ struct SelectedDateNoteView: View {
                     Text("\(selectedDate.formattedDay)")
                         .font(.system(.title, design: .rounded)).fontWeight(.heavy)
                         .foregroundColor(selectedDate.formattedInt == Date().formattedInt ? .yellow : .primary)
-                        .underline(selectedDate.formattedInt == Date().formattedInt ? true : false, color: .yellow)
+                        .underline(selectedDate.formattedInt == Date().formattedInt ? true : false, color: .yellow) // 밑줄 추가
                     Text(".day")
                         .font(.system(.caption, design: .rounded)).fontWeight(.bold)
                 }
@@ -101,7 +101,7 @@ private func noteView(monthNote: NoteEntity?) -> some View {
                         .frame(width:40, height: 40)
                     Text(monthNote.wrappedLeave.rawValue) // 연차/월차
                         .opacity(monthNote.wrappedLeave.select < 1 ? 0.0 : 1.0)
-                        .foregroundColor(monthNote.wrappedLeave.select > 1 ? .pink : .blue)
+                        .foregroundColor(monthNote.wrappedLeave.select > 1 ? .blue : .pink)
                 }
             }
         }

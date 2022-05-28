@@ -12,7 +12,7 @@ struct PayCalendarApp: App {
     let persistenceController = PersistenceController.shared
     
     @StateObject var calendarViewModel = CalendarViewModel()
-    
+
     var body: some Scene {
         WindowGroup {
             //ContentView()

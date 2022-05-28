@@ -22,7 +22,7 @@ class MonthlyPayDetailViewModel: ObservableObject {
     // 연장 근무 합계
         public var daysOverTime: Double {
             let total = notes.filter {
-                $0.leave == "" && $0.howwork == "평일"
+                $0.leave == "근무" && $0.howwork == "평일"
             }.reduce(0) {
                 $0 + $1.wrappedCode.value
             }
@@ -32,7 +32,7 @@ class MonthlyPayDetailViewModel: ObservableObject {
     // 휴일/휴무 연장 근무 합계
         public var dayoffsOverTime: Double {
             let total = notes.filter {
-                $0.leave == "" && ($0.howwork == "휴일" || $0.howwork == "휴무")
+                $0.leave == "근무" && ($0.howwork == "휴일" || $0.howwork == "휴무")
             }.reduce(0) {
                 $0 + $1.wrappedCode.value
             }
@@ -42,7 +42,7 @@ class MonthlyPayDetailViewModel: ObservableObject {
     // 휴일 근무 합계
         public var countDayoffs: Double {
             let total = notes.filter {
-                $0.leave == "" && $0.howwork == "휴일"
+                $0.leave == "근무" && $0.howwork == "휴일"
             }.reduce(0) {
                 $0 + $1.wrappedHowwork.count
             }
@@ -52,7 +52,7 @@ class MonthlyPayDetailViewModel: ObservableObject {
     // 휴무 근무 합계
         public var countDaycloses: Double {
             let total = notes.filter {
-                $0.leave == "" && $0.howwork == "휴무"
+                $0.leave == "근무" && $0.howwork == "휴무"
             }.reduce(0) {
                 $0 + $1.wrappedHowwork.count
             }
@@ -62,7 +62,7 @@ class MonthlyPayDetailViewModel: ObservableObject {
     // 야간 근무 합계
         public var countNights: Double {
             let total = notes.filter {
-                $0.leave == "" && ($0.selectedCode == "Y" || $0.selectedCode == "T" || $0.selectedCode == "N")
+                $0.leave == "근무" && ($0.selectedCode == "Y" || $0.selectedCode == "T" || $0.selectedCode == "N")
             }.reduce(0) {
                 $0 + $1.wrappedCode.count
             }
@@ -72,7 +72,7 @@ class MonthlyPayDetailViewModel: ObservableObject {
     // 야간 교대일수
         public var countNightShiftDays: Int {
             let total = notes.filter {
-                $0.leave == "" && ($0.selectedCode == "Y" || $0.selectedCode == "T" || $0.selectedCode == "N")
+                $0.leave == "근무" && ($0.selectedCode == "Y" || $0.selectedCode == "T" || $0.selectedCode == "N")
             }.reduce(0) {
                 $0 + $1.wrappedCode.shiftDays
             }
