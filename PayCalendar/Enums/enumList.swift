@@ -95,7 +95,7 @@ enum Code: String,CaseIterable, Identifiable {
     case Y = "Y"
     case T = "T"
     case N = "N"
-    case none = "none"
+    //case none = "none"
     
     var id: Self { self } //Identifiable
     
@@ -119,8 +119,8 @@ enum Code: String,CaseIterable, Identifiable {
             return 2.0
         case .N:
             return 3.0
-        case .none:
-            return 0.0
+        //case .none:
+        //    return 0.0
         }
     }
     
@@ -144,8 +144,8 @@ enum Code: String,CaseIterable, Identifiable {
             return 7.0
         case .N:
             return 7.0
-        case .none:
-            return 0.0
+       //case .none:
+       //     return 0.0
         }
     }
     
@@ -169,8 +169,8 @@ enum Code: String,CaseIterable, Identifiable {
             return 1
         case .N:
             return 1
-        case .none:
-            return 0
+        //case .none:
+        //    return 0
         }
     }
     
@@ -194,8 +194,8 @@ enum Code: String,CaseIterable, Identifiable {
             return "🥹"
         case .N:
             return "😍"
-        case .none:
-            return "🤬"
+        //case .none:
+        //    return "🤬"
         }
     }
     
@@ -219,8 +219,8 @@ enum Code: String,CaseIterable, Identifiable {
             return 7
         case .N:
             return 8
-        case .none:
-            return 9
+        //case .none:
+        //    return 9
         }
     }
 }

@@ -5,6 +5,8 @@
 //  Created by 이용석 on 2022/05/14.
 //
 
+//SoundManager.avkit.playSound(sound: .camera1)
+
 import Foundation
 import AVKit
 

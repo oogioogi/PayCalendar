@@ -16,74 +16,77 @@ struct AddingNewCodeNoteView: View {
     @Binding var isAddingNewCodeNoteView: Bool
     @Binding var indexDate: Date //리스트 데이트
     
-    @State private var daycode: Code = .none
+    @State private var daycode: Code = .A
     @State private var howDoWork: HowWork = .weekday // 평일
-    @State private var vacation: Leave = .none
+    @State private var leave: Leave = .none
     
     var body: some View {
-        GeometryReader { screen in
-            VStack {
-                Spacer()
-                ZStack {
-                    Rectangle()
-                        .frame(maxWidth: .infinity, maxHeight: screen.size.height / 2)
-                        .cornerRadius(20)
-                        .foregroundColor(.yellow)
-                        .overlay(
-                            VStack(alignment: .center, spacing: 20) {
-                                HStack {
-                                    Text("근무 코드")
-                                        .font(.system(.title, design: .default)).fontWeight(.heavy)
-                                    Spacer()
-                                    Button {
-                                        self.isAddingNewCodeNoteView.toggle()
-                                    }label: {
-                                        Image(systemName: "xmark.circle.fill")
-                                            .font(.system(.largeTitle, design: .default))
-                                            .foregroundColor(.pink)
+        //GeometryReader { screen in
+        VStack {
+            Spacer()
+            ZStack {
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height / 2)
+                    .cornerRadius(20)
+                    .foregroundColor(.yellow)
+                    .overlay(
+                        VStack(alignment: .center, spacing: 20) {
+                            HStack {
+                                Text("근무 코드")
+                                    .font(.system(.title, design: .default)).fontWeight(.heavy)
+                                Spacer()
+                                Button {
+                                    withAnimation {
+                                        self.isAddingNewCodeNoteView = false
                                     }
-                                }
-                                
-                                // selectedNotes 구성중 튿정일이 같은 하는 저장된요소를 찾아서 note에 저장
-                                if let note = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
-                                    //HStack{
-                                        codeScreen(code: note.wrappedCode)
-                                        howworkScreen(howwork: note.wrappedHowwork)
-                                        vacationScreen(vacation: vacation)
-                                    //}
                                     
-                                }else {
-                                    //HStack {
-                                        codeScreen(code: daycode)
-                                        howworkScreen(howwork: howDoWork)
-                                        vacationScreen(vacation: vacation)
-                                    //}
-                                    
+                                }label: {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .font(.system(.largeTitle, design: .default))
+                                        .foregroundColor(.pink)
                                 }
+                            }
+                            
+                            // selectedNotes 구성중 튿정일이 같은 하는 저장된요소를 찾아서 note에 저장
+                            if let note = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
+                                codeScreen(code: note.wrappedCode)
+                                howworkScreen(howwork: note.wrappedHowwork)
+                                vacationScreen(vacation: note.wrappedLeave)
                                 
-                                Circle()
-                                    .frame(width: 50, height: 50, alignment: .center)
-                                    .foregroundColor(.purple)
-                                    .overlay(
-                                        Text("Save").font(.system(size: 16, weight: .heavy, design: .rounded))
-                                            .foregroundColor(.white)
-                                    )
-                                    .onTapGesture {
-                                        if let editNote = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
-                                            //편집 저장
-                                            viewContext.delete(editNote)
-                                            save()
+                            }else {
+                                codeScreen(code: daycode)
+                                howworkScreen(howwork: howDoWork)
+                                vacationScreen(vacation: leave)
+                                
+                            }
+                            
+                            Circle()
+                                .frame(width: 50, height: 50, alignment: .center)
+                                .foregroundColor(.purple)
+                                .overlay(
+                                    Text("Save").font(.system(size: 16, weight: .heavy, design: .rounded))
+                                        .foregroundColor(.white)
+                                )
+                                .onTapGesture {
+                                    if let editNote = selectMonthNotes.first(where: { $0.selectedDay == indexDate.formattedInt }) {
+                                        //편집 저장
+                                        viewContext.delete(editNote)
+                                        save()
+                                        withAnimation {
                                             self.isAddingNewCodeNoteView = false
-                                        }else {
-                                            // 신규 저장
-                                            save()
+                                        }
+                                    }else {
+                                        // 신규 저장
+                                        save()
+                                        withAnimation {
                                             self.isAddingNewCodeNoteView = false
                                         }
                                     }
-                            }
+                                }
+                        }
                             .padding()
-                        )
-                }
+                    )
+                    .zIndex(1)
             }
         }
         .edgesIgnoringSafeArea(.bottom)
@@ -98,7 +101,7 @@ struct AddingNewCodeNoteView: View {
         newNote.selectedMonth = indexDate.formattedMonth
         newNote.wrappedCode = daycode
         newNote.wrappedHowwork = howDoWork
-        newNote.wrappedLeave = vacation
+        newNote.wrappedLeave = leave
         
         do {
             try viewContext.save()
@@ -111,7 +114,7 @@ struct AddingNewCodeNoteView: View {
     // -- View Builser --
     @ViewBuilder
     private func codeScreen(code: Code) -> some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text("코드")
                 .font(.system(size: 15)).fontWeight(.bold)
             Picker("DayCode", selection: $daycode) {
@@ -127,7 +130,7 @@ struct AddingNewCodeNoteView: View {
     
     @ViewBuilder
     private func howworkScreen(howwork: HowWork) -> some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text("근무 환경 시간")
                 .font(.system(size: 15)).fontWeight(.bold)
             Picker("Day Overtime", selection: $howDoWork) {
@@ -149,10 +152,10 @@ struct AddingNewCodeNoteView: View {
     @ViewBuilder
     private func vacationScreen(vacation: Leave) -> some View {
         
-        VStack {
+        VStack(alignment: .leading) {
             Text("휴가")
                 .font(.system(size: 15)).fontWeight(.bold)
-            Picker("Vacation", selection: $vacation) {
+            Picker("Vacation", selection: $leave) {
                 ForEach(Leave.allCases) { item in
                     Text(item.rawValue)
                 }
@@ -160,7 +163,7 @@ struct AddingNewCodeNoteView: View {
             .pickerStyle(.segmented)
         }
         .onAppear {
-            self.vacation = vacation
+            self.leave = vacation
         }
     }
 }

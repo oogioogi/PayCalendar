@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		91A6CAF32823BA41009A4688 /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6CAF22823BA41009A4688 /* BlankView.swift */; };
-		91A6CAF52823BCA5009A4688 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6CAF42823BCA5009A4688 /* BottomSheet.swift */; };
 		91A7BD5828272FB400D651F7 /* SlideButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A7BD5728272FB400D651F7 /* SlideButtons.swift */; };
 		91A7BD5A28274B4700D651F7 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A7BD5928274B4700D651F7 /* ArrowView.swift */; };
 		91A8062328222DA400CE8189 /* MonthlyPayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8062228222DA400CE8189 /* MonthlyPayDetailView.swift */; };
@@ -42,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		91A6CAF22823BA41009A4688 /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
-		91A6CAF42823BCA5009A4688 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		91A7BD5728272FB400D651F7 /* SlideButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideButtons.swift; sourceTree = "<group>"; };
 		91A7BD5928274B4700D651F7 /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
 		91A8062228222DA400CE8189 /* MonthlyPayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPayDetailView.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 				91B5A661281F7D3700767FD0 /* TextWithBadge.swift */,
 				91B9534C282A843F00E946CB /* CalendarDay.swift */,
 				91A6CAF22823BA41009A4688 /* BlankView.swift */,
-				91A6CAF42823BCA5009A4688 /* BottomSheet.swift */,
 				91A7BD5728272FB400D651F7 /* SlideButtons.swift */,
 				91A7BD5928274B4700D651F7 /* ArrowView.swift */,
 			);
@@ -320,7 +317,6 @@
 				91BC96C0283670A800B9F4EE /* SoundManager.swift in Sources */,
 				91B5A65A281F628100767FD0 /* NoteEntity.swift in Sources */,
 				91DFF3D6282351D80060EC24 /* LeaveUsedListView.swift in Sources */,
-				91A6CAF52823BCA5009A4688 /* BottomSheet.swift in Sources */,
 				91B9534D282A843F00E946CB /* CalendarDay.swift in Sources */,
 				91B5A63A281F5E2700767FD0 /* PayCalendarApp.swift in Sources */,
 				91B5A662281F7D3700767FD0 /* TextWithBadge.swift in Sources */,

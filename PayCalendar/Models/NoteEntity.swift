@@ -31,7 +31,7 @@ public class NoteEntity: NSManagedObject, Identifiable {
             self.selectedCode = newValue.rawValue
         }
         get {
-            Code(rawValue: selectedCode) ?? .none
+            Code(rawValue: selectedCode) ?? .A
         }
     }
     

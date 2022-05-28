@@ -66,7 +66,10 @@ struct MainView: View {
                                     }
                                     
                                     Button {
-                                        self.isAddingNewCodeNoteView.toggle()
+                                        withAnimation {
+                                            self.isAddingNewCodeNoteView.toggle()
+                                        }
+                                       
                                         self.indexDate = indexDate
                                     } label: {
                                         HStack {
@@ -78,9 +81,9 @@ struct MainView: View {
                         }else {
                             SelectedDateNoteView(selectedDate: indexDate)
                                 .onTapGesture {
-                                    //withAnimation(.easeInOut(duration: 1)) {
-                                    self.isAddingNewCodeNoteView.toggle()
-                                    //}
+                                    withAnimation {
+                                        self.isAddingNewCodeNoteView.toggle()
+                                    }
                                     self.indexDate = indexDate
                                 }
                         }
@@ -90,21 +93,34 @@ struct MainView: View {
                 .listStyle(.plain)
             }
             .sheet(isPresented: $isMonthlyPayDetailView, content: { MonthlyPayDetailView(notes: selectedMonthNotes) })
+            .sheet(isPresented: $isCalendarModeView, content: { CalendarModeView(selectedMonthNotes: selectedMonthNotes) })
             .fullScreenCover(isPresented: $isInfoSetting, content: { PersonInfoSettingView(isInfoSetting: $isInfoSetting) })
-            .sheet(isPresented: $isCalendarModeView, content: { CalendarModeView(selectedMonthNotes: selectedMonthNotes)})
-
+            
+            
             //새로운 코드 입력
             if isAddingNewCodeNoteView {
                 BlankView(bgColor: .black)
                     .opacity(isAddingNewCodeNoteView ? 0.5 : 0)
                     .onTapGesture {
-                        self.isAddingNewCodeNoteView.toggle()
+                        withAnimation {
+                            self.isAddingNewCodeNoteView.toggle()
+                        }
                     }
+                    //.zIndex(0)
+                    .transition(.move(edge: .bottom))
+                
                 AddingNewCodeNoteView(selectMonthNotes: selectedMonthNotes,
                                       isAddingNewCodeNoteView: $isAddingNewCodeNoteView,
                                       indexDate: $indexDate)
-                .transition(.move(edge: .bottom))
-                .animation(.easeInOut(duration: 0.2))
+                    .transition(.move(edge: .bottom))
+                    .animation(.default.delay(0.2))
+                    .onAppear {
+                        SoundManager.avkit.playSound(sound: .camera1)
+                    }
+                    .onDisappear {
+                        SoundManager.avkit.playSound(sound: .camera2)
+                    }
+                    .zIndex(1)
             }
         }
         
