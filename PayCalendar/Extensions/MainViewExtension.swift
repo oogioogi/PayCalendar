@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension MainView {
+extension PayCalendarView {
     
     // 선택한 년으로만 재배열 선언
     var selectedYearNotes: [NoteEntity] {

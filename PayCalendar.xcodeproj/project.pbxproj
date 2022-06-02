@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91485D8728447F8A00F64A6D /* PayCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91485D8628447F8A00F64A6D /* PayCalendarView.swift */; };
 		91A6CAF32823BA41009A4688 /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6CAF22823BA41009A4688 /* BlankView.swift */; };
 		91A7BD5828272FB400D651F7 /* SlideButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A7BD5728272FB400D651F7 /* SlideButtons.swift */; };
 		91A7BD5A28274B4700D651F7 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A7BD5928274B4700D651F7 /* ArrowView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91485D8628447F8A00F64A6D /* PayCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCalendarView.swift; sourceTree = "<group>"; };
 		91A6CAF22823BA41009A4688 /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
 		91A7BD5728272FB400D651F7 /* SlideButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideButtons.swift; sourceTree = "<group>"; };
 		91A7BD5928274B4700D651F7 /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				91B5A650281F5ECB00767FD0 /* MainView.swift */,
+				91485D8628447F8A00F64A6D /* PayCalendarView.swift */,
 				91ABA22328291DE10097F3BB /* CalendarModeView.swift */,
 				91B5A65F281F6BD000767FD0 /* SelectedDateNoteView.swift */,
 				91AA6CDC2820C3A30057AA8A /* AddingNewCodeNoteView.swift */,
@@ -323,6 +326,7 @@
 				91A8062528222EB500CE8189 /* MonthlyPayDetailViewModel.swift in Sources */,
 				91B65FE82825FEBA00F6676F /* PersonInfo.swift in Sources */,
 				91B5A660281F6BD000767FD0 /* SelectedDateNoteView.swift in Sources */,
+				91485D8728447F8A00F64A6D /* PayCalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

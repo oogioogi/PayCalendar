@@ -103,32 +103,60 @@ struct PersonInfoSettingView: View {
             Capsule()
                 .frame(width: 100, height: 40)
                 .foregroundColor(.purple)
-                .scaleEffect(self.isSave ? 0.5 : 1.0)
+                //.scaleEffect(self.isSave ? 0.5 : 1.0)
                 .overlay(
                     Text("Save")
                         .font(.system(.title, design: .rounded))
                         .foregroundColor(.white)
                         .fontWeight(.heavy)
-                        .scaleEffect(self.isSave ? 0.5 : 1.0)
+                        //.scaleEffect(self.isSave ? 0.5 : 1.0)
 
                 )
                 .onTapGesture {
                     withAnimation {
                         self.isSave.toggle()
                     }
-                    DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) {
-                        personInfoVM.saveToJson(person: personInfoVM.personInfo)
-                        self.isInfoSetting.toggle()
-                    }
-                    
                 }
+                
         }
         .padding()
         .onAppear {
             personInfoVM.personInfo = personInfoVM.loadJson()
             //print("\(personInfoVM.personInfo)")
         }
+        //.alert(isPresented: $isSave, content: savingToJson)
+        //.actionSheet(isPresented: $isSave, content: savingToJson)
+        .alert(Text("저장 하시겠습니까?"), isPresented: $isSave) {
+            Button {
+                DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) {
+                    personInfoVM.saveToJson(person: personInfoVM.personInfo)
+                    self.isInfoSetting.toggle()
+                }
+            } label: {
+                Text("Ok")
+            }
+
+            Button {
+                
+            } label: {
+                Text("cancel")
+            }
+        }
     }
+    
+//    func savingToJson() -> Alert {
+//        let saveButton: ActionSheet.Button = .destructive(Text("저장")) {
+//            DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) {
+//                personInfoVM.saveToJson(person: personInfoVM.personInfo)
+//                self.isInfoSetting.toggle()
+//            }
+//        }
+//
+//        let cancleButton: ActionSheet.Button = .cancel(Text("취소")) { }
+//
+//        return Alert(title: Text("저장 하시겠습니까?"), primaryButton: saveButton, secondaryButton: cancleButton)
+//    }
+    
     @ViewBuilder
     private func capsuleText(_ text: String, color: Color) -> some View {
         Capsule()

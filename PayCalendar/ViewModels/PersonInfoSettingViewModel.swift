@@ -20,7 +20,7 @@ class PersonInfoSettingViewModel: ObservableObject {
         do {
             let encodeData = try JSONEncoder().encode(person)
             let defaults = UserDefaults.standard
-            defaults.setValue(encodeData, forKey: "SavedPersonInfo")
+            defaults.setValue(encodeData, forKey: "SavedPe rsonInfo")
             
         } catch let error {
             print("Json Encode Error : \(error.localizedDescription)")

@@ -23,7 +23,7 @@ struct AddingNewCodeNoteView: View {
     var body: some View {
         //GeometryReader { screen in
         VStack {
-            Spacer()
+            //Spacer()
             ZStack {
                 Rectangle()
                     .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height / 2)
@@ -44,6 +44,7 @@ struct AddingNewCodeNoteView: View {
                                     Image(systemName: "xmark.circle.fill")
                                         .font(.system(.largeTitle, design: .default))
                                         .foregroundColor(.pink)
+                                        .shadow(color: .primary, radius: 2, x: 2, y: 2)
                                 }
                             }
                             
@@ -63,6 +64,7 @@ struct AddingNewCodeNoteView: View {
                             Circle()
                                 .frame(width: 50, height: 50, alignment: .center)
                                 .foregroundColor(.purple)
+                                .shadow(color: .primary, radius: 2, x: 2, y: 2)
                                 .overlay(
                                     Text("Save").font(.system(size: 16, weight: .heavy, design: .rounded))
                                         .foregroundColor(.white)
@@ -84,7 +86,7 @@ struct AddingNewCodeNoteView: View {
                                     }
                                 }
                         }
-                            .padding()
+                        .padding()
                     )
                     .zIndex(1)
             }
