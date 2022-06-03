@@ -20,6 +20,17 @@ struct AddingNewCodeNoteView: View {
     @State private var howDoWork: HowWork = .weekday // 평일
     @State private var leave: Leave = .none
     
+    init(selectMonthNotes: [NoteEntity], isAddingNewCodeNoteView: Binding<Bool>, indexDate: Binding<Date>) {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.purple
+
+        let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.white]
+        UISegmentedControl.appearance().setTitleTextAttributes(attributes, for: .selected)
+        
+        self.selectMonthNotes = selectMonthNotes
+        _isAddingNewCodeNoteView = isAddingNewCodeNoteView
+        _indexDate = indexDate
+    }
+    
     var body: some View {
         //GeometryReader { screen in
         VStack {
