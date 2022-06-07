@@ -14,7 +14,7 @@ struct MainView: View {
     @State var isPayCalendar: Bool = false
     @State var iconTinggle: Bool = false
     @State var isClicked: Bool = false
-    
+
     var body: some View {
         ZStack {
             RadialGradient(colors: [Color("fgLiteral"), Color("bgLiteral")],
@@ -33,7 +33,7 @@ struct MainView: View {
                         paycalendar
                         todolist
                     }
-                    .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .top)))
+                    .transition(.asymmetric(insertion: .insertionAnytransition, removal: .removalAnytransition))
                 }else {
                     Text("Please Press Plus Button..")
                         .font(.system(.headline, design: .rounded))
@@ -75,7 +75,7 @@ struct MainView_Previews: PreviewProvider {
     }
 }
 
-
+// Views
 extension MainView {
     
     // title
@@ -140,5 +140,17 @@ extension MainView {
         .onTapGesture {
            //
         }
+    }
+}
+
+//Anytransition
+
+extension AnyTransition {
+    static var insertionAnytransition: AnyTransition {
+        AnyTransition.move(edge: .bottom).combined(with: .opacity)
+    }
+    
+    static var removalAnytransition: AnyTransition {
+        AnyTransition.move(edge: .top).combined(with: .opacity)
     }
 }
